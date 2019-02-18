@@ -36,13 +36,22 @@ module.exports = {
         loader: "babel-loader",
         exclude: /node_modules/,
         options: {
-          presets: [
-            ["es2015", {"modules": false}],
-            "react",
-          ],
           plugins: [
             "react-hot-loader/babel"
           ]
+        }
+      },
+      {
+        test: /\.css$/,
+      },
+      {
+        test: /\.(png|gif|jp(e*)g|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 8000,
+            name: 'images/[hash]-[name].[ext]'
+          }
         }
       }
     ],
@@ -54,7 +63,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template:'template.ejs',
       appMountId: 'react-app-root',
-      title: 'React Help Queue',
+      title: 'portfolio',
       filename: resolve(__dirname, "build", "index.html"),
     }),
   ]
