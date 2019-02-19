@@ -1,5 +1,5 @@
 import React from 'react';
-import Feed from './Feed';
+import FeedItem from './FeedItem';
 import PropTypes from 'prop-types';
 
 function FeedList(props){
@@ -8,16 +8,16 @@ function FeedList(props){
     <div>
       <hr/>
       {props.feedList.map((feed) =>
-        <Feed name={feed.name}
+        <FeedItem name={feed.name}
           post={feed.post}
           key={feed.id}/>
       )}
-    </div>
-  );
-}
+        </div>
+      );
+    }
 
-FeedList.propTypes = {
-  feedList: PropTypes.array
-};
+    FeedList.propTypes = {
+      feedList: PropTypes.array
+    };
 
-export default FeedList;
+    export default FeedList;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import Feed from './Feed';
+import FeedItem from './FeedItem';
 import NewFeedForm from './NewFeedForm'
 class NewFeedControl extends React.Component {
 

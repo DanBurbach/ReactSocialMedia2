@@ -16,7 +16,7 @@ const friendBox = {
 }
 
 const addFriendStyle = {
-  fontSize: '16px'
+  fontSize: '14px'
 }
 
 const friends = [
