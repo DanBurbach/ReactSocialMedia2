@@ -11,6 +11,7 @@ class Feed extends React.Component{
     };
     this.handleAddingNewPostToFeed =
     this.handleAddingNewPostToFeed.bind(this);
+    this.handleLike = this.handleLike.bind(this);
   }
 
   handleAddingNewPostToFeed(newPost){
@@ -19,11 +20,21 @@ class Feed extends React.Component{
     this.setState({masterFeedList: newMasterFeedList});
   }
 
+  handleLike(id){
+    let feedItems = this.state.masterFeedList.slice();
+    feedItems.forEach(function(feedItem){
+      if (id === feedItem.id) {
+        feedItem.likes += 1
+      }
+    })
+    this.setState({masterFeedList: feedItems});
+  }
+
   render (){
     return (
       <div>
         <NewFeedControl onNewFeedCreation={this.handleAddingNewPostToFeed} />
-        <FeedList feedList={this.state.masterFeedList} />
+        <FeedList likeFeedItem={this.handleLike} feedList={this.state.masterFeedList} />
       </div>
     );
   }

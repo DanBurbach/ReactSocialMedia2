@@ -9,8 +9,10 @@ function NewFeedForm(props) {
 
   function handleNewFeedFormSubmission(event) {
     event.preventDefault();
-    console.log('hit here');
-    props.onNewFeedCreation({name: _name.value, post: _post.value, id: v4()});
+    props.onNewFeedCreation({name: _name.value,
+                            post: _post.value,
+                            likes: 0,
+                            id: v4()});
     _name.value = '';
     _post.value =' ';
   }

@@ -34,7 +34,7 @@ function ListFriends(){
   return (
     <div>
       <p> Add Friends </p>
-        {friends.map((friend,index) =>
+        {friends.map((friend, index) =>
           <div style={friendBox}>
             <p>{friend.name}</p>
               <div>
